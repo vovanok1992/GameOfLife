@@ -164,19 +164,22 @@ public class MainWindow extends JFrame implements MouseListener, MouseMotionList
         comboBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
 
-                if (comboBox.getSelectedIndex() == 0) {
-                    gamePanel.setRule(FieldCalculator.RULE_CLASSIC);
+                switch(comboBox.getSelectedIndex()){
+                    case 0:
+                        gamePanel.setRule(FieldCalculator.RULE_CLASSIC);
+                        break;
+                    case 1:
+                        gamePanel.setRule(FieldCalculator.RULE_GNARL);
+                        break;
+                    case 2:
+                        gamePanel.setRule(FieldCalculator.RULE_MAZE);
+                        break;
+                    case 3:
+                        gamePanel.setRule(FieldCalculator.RULE_COAGULATIONS);
                 }
-                if (comboBox.getSelectedIndex() == 1) {
-                    gamePanel.setRule(FieldCalculator.RULE_GNARL);
-                }
-                if (comboBox.getSelectedIndex() == 2) {
-                    gamePanel.setRule(FieldCalculator.RULE_MAZE);
-                }
-
             }
         });
-        comboBox.setModel(new DefaultComboBoxModel(new String[]{"Classic life", "Gnarl", "Maze"}));
+        comboBox.setModel(new DefaultComboBoxModel(new String[]{"Classic life", "Gnarl", "Maze", "Coagulations"}));
         comboBox.setToolTipText("Choose rule");
         controls.add(comboBox);
         pack();

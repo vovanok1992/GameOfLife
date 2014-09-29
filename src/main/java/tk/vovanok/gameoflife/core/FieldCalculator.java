@@ -13,7 +13,8 @@ public class FieldCalculator {
 	public static final int RULE_CLASSIC=0;
 	public static final int RULE_GNARL=1;
 	public static final int RULE_MAZE = 2;
-	
+	public static final int RULE_COAGULATIONS = 3;
+        
 	public Field gameField;
 	Field gameBeforeOneStep;
 	LifeRule rule;
@@ -163,6 +164,9 @@ public class FieldCalculator {
                 break;
             case RULE_MAZE:
                 rule = new Maze();
+                break;
+            case RULE_COAGULATIONS:
+                rule = new Coagulations();
                 break;
         }
 
